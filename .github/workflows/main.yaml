@@ -3,7 +3,7 @@ name: Demonstration of APIOps
 on:
   push:
     paths:
-      - /openapi/*.yaml
+      - /openapi/**
   workflow_dispatch:
 
 jobs:
@@ -19,4 +19,6 @@ jobs:
           deck file openapi2kong -s openapi/httpbin.yaml -o kong.yaml
       - name: sync gateway settings
         run: |
-          deck gateway sync --konnect-token ${{ secrets.KONNECT_TOKEN }} --konnect-control-plane ${{ secrets.KONNECT_CONTROL_PLANE }}
+          deck gateway sync kong.yaml \
+            --konnect-token ${{ secrets.KONNECT_TOKEN }} \
+            --konnect-control-plane ${{ secrets.KONNECT_CONTROL_PLANE }} 
