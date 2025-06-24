@@ -21,4 +21,4 @@ jobs:
         run: |
           deck gateway sync kong.yaml \
             --konnect-token ${{ secrets.KONNECT_TOKEN }} \
-            --konnect-control-plane ${{ secrets.KONNECT_CONTROL_PLANE }} 
+            --konnect-control-plane-name ${{ secrets.KONNECT_CONTROL_PLANE }} 
