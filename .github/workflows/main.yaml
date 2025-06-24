@@ -3,7 +3,7 @@ name: Demonstration of APIOps
 on:
   push:
     paths:
-      - /openapi/**
+      - openapi/**
   workflow_dispatch:
 
 jobs:
@@ -11,9 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: kong/setup-inso@v2
+        with:
+          inso-version: 11.2.0
       - uses: kong/setup-deck@v1
         with:
           deck-version: 1.49.0
+      - name: lint openapi spec
+        run: |
+          lint spec openapi/httpbin.yaml
       - name: convert openapi spec to deck spec
         run: |
           deck file openapi2kong -s openapi/httpbin.yaml -o kong.yaml
