@@ -1,59 +1,71 @@
 openapi: 3.0.0
 info:
   title: httpbin
+  description: This is unofficial openapi spec of httpbin.
   version: "1.0.0"
+  contact:
+    name: Shuhei Kawamura
 paths:
   /delete:
     delete:
       operationId: /delete
+      description: The request’s DELETE parameters.
       responses:
         "200":
           description: The request’s DELETE parameters.
   /get:
     get:
       operationId: /get
+      description: The request’s query parameters.
       responses:
         "200":
           description: The request’s query parameters.
   /patch:
     patch:
       operationId: /patch
+      description: The request’s PATCH parameters.
       responses:
         "200":
           description: The request’s PATCH parameters.
   /post:
     post:
       operationId: /post
+      description: The request's POST parameters.
       responses:
         "200":
-          description: "post: response 200"
+          description: The request's POST parameters.
   /put:
     put:
       operationId: /put
+      description: The request's PUT parameters.
       responses:
         "200":
           description: The request’s PUT parameters.
   /headers:
     get:
       operationId: /headers
+      description: The request’s headers.
       responses:
         "200":
           description: The request’s headers.
   /ip:
     get:
       operationId: /ip
+      description: Returns the requester's IP Address.
       responses:
         "200":
           description: Returns the requester's IP Address.
   /user-agent:
     get:
       operationId: /user-agent
+      description: Return the incoming requests's User-Agent header.
       responses:
         "200":
           description: Return the incoming requests's User-Agent header.
   /anything:
     get:
       operationId: /anything
+      description: Returns anything that is passed to request
       responses:
         "200":
           description: Returns anything that is passed to request
