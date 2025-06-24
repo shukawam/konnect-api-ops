@@ -3,7 +3,7 @@ name: Demonstration of APIOps
 on:
   push:
     paths:
-      - /openapi
+      - /openapi/*.yaml
   workflow_dispatch:
 
 jobs:
