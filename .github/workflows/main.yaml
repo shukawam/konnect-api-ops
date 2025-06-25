@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: kong/setup-inso@v2
+        with:
+          inso-version: 10.3.1
       - uses: kong/setup-deck@v1
         with:
           deck-version: 1.49.0
