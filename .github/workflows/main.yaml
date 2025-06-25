@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: kong/setup-inso@v2
+      - uses: shukawam/setup-inso@v2
         with:
           inso-version: 11.2.0
           compression: tar.xz
