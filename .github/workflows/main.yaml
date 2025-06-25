@@ -14,6 +14,7 @@ jobs:
       - uses: kong/setup-inso@v2
         with:
           inso-version: 11.2.0
+          compression: tar.xz
       - uses: kong/setup-deck@v1
         with:
           deck-version: 1.49.0
